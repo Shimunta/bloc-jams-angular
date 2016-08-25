@@ -1,7 +1,10 @@
 (function () {
   function SongPlayer() {
     var SongPlayer = {};
-
+    /**
+    * @desc song object from album
+    * @type {Object}
+    */
     var currentSong = null;
     /**
     * @desc Buzz object audio file
@@ -26,11 +29,24 @@
 
       currentSong = song;
     }
+    /**
+    *@function playSong
+    *@desc plays current buzzObject, and sets the current song object property playing to boolean true
+    *@param {Object} song
+    */
+    var playSong = function(song) {
+      currentBuzzObject.play();
+      song.playing = true;
+    }
+    /**
+    @function play and pause
+    @desc logic for playing or pausing a song based on ngclick
+    @param {Object} song
+    */
     SongPlayer.play = function(song) {
       if (currentSong !== song) {
         setSong(song);
-        currentBuzzObject.play();
-        song.playing = true;
+        playSong(song);
       } else if (currentSong === song) {
           if (currentBuzzObject.isPaused()) {
             currentBuzzObject.play();
