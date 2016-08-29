@@ -43,8 +43,8 @@
     */
     SongPlayer.currentSong = null;
     /**
-    *@function playSong
-    *@desc plays current buzzObject, and sets the current song object property playing to boolean true
+    *@function playSong and stopSong
+    *@desc plays (or stops) current buzzObject, and sets the current song object property playing to boolean true
     *@param {Object} song
     */
     var playSong = function(song) {
