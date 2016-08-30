@@ -131,6 +131,15 @@
     };
 
 
+    SongPlayer.volume = 0;
+    SongPlayer.max = 100;
+
+    SongPlayer.setVolume = function(value) {
+      if(currentBuzzObject) {
+        currentBuzzObject.setVolume(value);
+      }
+    };
+
     return SongPlayer;
   }
 
